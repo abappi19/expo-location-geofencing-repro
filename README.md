@@ -1,6 +1,6 @@
 # expo-location geofencing requires `UIBackgroundModes: location` on iOS
 
-Minimal reproduction for [expo/expo#XXXXX](https://github.com/expo/expo/issues).
+Minimal reproduction for [expo/expo#50194](https://github.com/expo/expo/issues/50194).
 
 `Location.startGeofencingAsync` refuses to start unless the app declares the `location`
 background mode, even though it only uses Core Location **region monitoring**, which does not
