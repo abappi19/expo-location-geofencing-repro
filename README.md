@@ -79,7 +79,9 @@ plutil -extract UIBackgroundModes xml1 -o - ios/expolocationgeofencingrepro/Info
 ## Second gate, behind the first
 
 Setting `isIosBackgroundLocationEnabled: true` in the `expo-location` plugin config makes this work
-— and that is precisely the `Info.plist` entry that gets the app rejected. Removing only the
+(rerun `npx expo prebuild -p ios --clean` first — a plain `npx expo run:ios` will not re-apply the plugin
+change to an existing `ios/` directory) — and that is precisely the `Info.plist` entry that gets the app
+rejected. Removing only the
 `LocationModule.swift` guard is not enough either: the task consumer then crashes, because
 
 [`EXGeofencingTaskConsumer.m:74`](https://github.com/expo/expo/blob/main/packages/expo-location/ios/TaskConsumers/EXGeofencingTaskConsumer.m#L74)
