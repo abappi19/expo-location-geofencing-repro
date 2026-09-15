@@ -7,9 +7,11 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "dev.repro.expolocationgeofencing"
     },
     "android": {
+      "package": "dev.repro.expolocationgeofencing",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
@@ -19,6 +21,16 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Used to demonstrate geofencing.",
+          "locationAlwaysAndWhenInUsePermission": "Used to demonstrate geofencing.",
+          "locationAlwaysPermission": "Used to demonstrate geofencing."
+        }
+      ]
+    ]
   }
 }
